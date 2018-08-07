@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h3 class="modal-title">Victory !</h3>
+</div>
+<div class="modal-body">
+    <div class="row text-center">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Victory for Player {{Obj.nb_victorious}}</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="item in Obj.final_order">
+                            {{$index+1}} - Player {{item.nb}} with {{item.ressources.pv}} PV
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="restart()">Restart the game !</button>
+</div>

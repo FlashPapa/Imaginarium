@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <h3 class="modal-title">Resource transformation</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="thumbnail">
+                <img src="/assets/cards/machines/{{Obj.type}}.png" alt="...">
+                <div class="caption">
+                    <h3>Choose {{nb_choice}} resources to exchange</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="btn-group">
+                                <label class="btn btn-default" ng-model="radioModel" uib-btn-radio="'Left'" ng-click="moins(1)">-</label>
+                                <label class="btn btn-default" ng-model="radioModel" uib-btn-radio="'Middle'" ng-click="zero(1)">
+                                    {{count_bois}} Wood / {{cp.ressources.bois}}</label>
+                                <label class="btn btn-default" ng-model="radioModel" uib-btn-radio="'Right'" ng-click="plus(1)">+</label>
+                            </div>
+                            &nbsp;For {{rendement}} {{cible}}
+                        </li>
+                        <li class="list-group-item">
+                            <div class="btn-group">
+                                <label class="btn btn-default" ng-model="radioModel2" uib-btn-radio="'Left'" ng-click="moins(2)">-</label>
+                                <label class="btn btn-default" ng-model="radioModel2" uib-btn-radio="'Middle'" ng-click="zero(2)">
+                                    {{count_cuivre}} Copper / {{cp.ressources.cuivre}}</label>
+                                <label class="btn btn-default" ng-model="radioModel2" uib-btn-radio="'Right'" ng-click="plus(2)">+</label>
+                            </div>
+                            &nbsp;For {{rendement}} {{cible}}
+                        </li>
+                        <li class="list-group-item">
+                            <div class="btn-group">
+                                <label class="btn btn-default" ng-model="radioModel3" uib-btn-radio="'Left'" ng-click="moins(3)">-</label>
+                                <label class="btn btn-default" ng-model="radioModel3" uib-btn-radio="'Middle'" ng-click="zero(3)">
+                                    {{count_cristal}} Crystal / {{cp.ressources.cristal}}</label>
+                                <label class="btn btn-default" ng-model="radioModel3" uib-btn-radio="'Right'" ng-click="plus(3)">+</label>
+                            </div>
+                            &nbsp;For {{rendement}} {{cible}}
+                        </li>
+                    </ul>
+
+                    <div uib-collapse="erreur==''">
+                        <div class="alert alert-warning" role="alert">{{erreur}}</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="valide()">Confirm</button>
+</div>

@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <h3 class="modal-title">Destruction of machines</h3>
+</div>
+<div class="modal-body">
+    <div class="row" ng-model="mirroir">
+        <div class="col-md-2" style="margin-top: 10px" ng-repeat="card in liste">
+            <img class="btn btn-default {{sel.idx===$index ? 'disabled':''}}"
+                    style="max-height: 110px"
+                    src="/assets/cards/machines/{{card.type}}.png"
+                    ng-click="selection($index, card)">
+        </div>
+    </div>
+    <hr ng-if="sel.selected">
+    <div class="well" ng-if="sel.selected">
+        <div class="row text-center">
+            <div class="col-md-6">
+                <img class="btn btn-default"
+                        style="max-height: 220px"
+                        src="/assets/cards/machines/{{sel.card.type}}.png">
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="" ng-click="make_echange(4)" class="list-group-item">
+                            Recover {{sel.card.niveau}} PV
+                        </a>
+                    </li>
+                    <li class="list-group-item">OU</li>
+                    <li class="list-group-item">
+                        Select {{sel.card.niveau}} resources
+                        <ul class="list-group" style="margin-top: 10px">
+                            <a href="" ng-click="make_echange(1)" class="list-group-item" ng-show="sel.card.cout_reparation.bois>=1">
+                                {{sel_bois}} Wood / {{sel.card.cout_reparation.bois}}
+                            </a>
+                            <a href="" ng-click="make_echange(2)" class="list-group-item" ng-show="sel.card.cout_reparation.cuivre>=1">
+                                {{sel_cuivre}} Copper / {{sel.card.cout_reparation.cuivre}}
+                            </a>
+                            <a href="" ng-click="make_echange(3)" class="list-group-item" ng-show="sel.card.cout_reparation.cristal>=1">
+                                {{sel_cristal}} Crystal / {{sel.card.cout_reparation.cristal}}
+                            </a>
+                            <a href="" ng-click="annuler_sel()" class="list-group-item" ng-show="sel_bois+sel_cuivre+sel_cristal>0">
+                                Cancel the selection
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="ok()">Confirm</button>
+</div>

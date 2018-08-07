@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h3 class="modal-title">Make your exchanges</h3>
+</div>
+<div class="modal-body">
+    <div class="row" style="margin: 0;">
+        <div class="caption"><h3>Exchange n° {{tour}}</h3>
+            <ul class="list-group">
+                <a href="" ng-click="make_echange(1)" class="list-group-item" ng-show="copy_mirroir.charbonium>=1">
+                    1 Charbonium / {{copy_mirroir.charbonium}} > For 1 Wood
+                </a>
+                <a href="" ng-click="make_echange(2)" class="list-group-item" ng-show="copy_mirroir.charbonium>=2">
+                    2 Charboniums / {{copy_mirroir.charbonium}} > For 1 Copper
+                </a>
+                <a href="" ng-click="make_echange(3)" class="list-group-item" ng-show="copy_mirroir.charbonium>=3">
+                    3 Charboniums / {{copy_mirroir.charbonium}} > For 1 Crystal
+                </a>
+                <a href="" ng-click="make_echange(4)" class="list-group-item" ng-show="copy_mirroir.charbonium>=5">
+                    5 Charboniums / {{copy_mirroir.charbonium}} > For 1 PV
+                </a>
+                <a href="" ng-click="make_echange(5)" class="list-group-item" ng-show="copy_mirroir.bois>=1">
+                    1 Wood / {{copy_mirroir.bois}} > For 1 Charbonium
+                </a>
+                <a href="" ng-click="make_echange(6)" class="list-group-item" ng-show="copy_mirroir.cuivre>=1">
+                    1 Copper / {{copy_mirroir.cuivre}} > For 2 Charboniums
+                </a>
+                <a href="" ng-click="make_echange(7)" class="list-group-item" ng-show="copy_mirroir.cristal>=1">
+                    1 Crystal / {{copy_mirroir.cristal}} > For 3 Charboniums
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="termine_echange()">Confirm</button>
+</div>

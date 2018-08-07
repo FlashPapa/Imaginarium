@@ -1,0 +1,66 @@
+<div class="modal-header">
+    <h3 class="modal-title">Rearrange machines</h3>
+</div>
+<div class="modal-body">
+    <div class="row apps-container" ui-sortable="sortableOptions" ng-model="mirroir">
+        <div class="col-md-2" style="padding: 10px;margin-left: 2px" ng-repeat="card in mirroir">
+            <img class="btn btn-default {{card.disabled ? 'disabled':''}}"
+                    style="max-height: 110px"
+                    src="/assets/cards/machines/{{card.type}}.png">
+            <!--ng-click="selection($index, card)"-->
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3 text-center" style="">
+            <div class="apps-container" style="padding: 5px;padding-top:60px;border-style: dashed;min-height: 110px;border-color:#cccccc" ui-sortable="sortableOptions" ng-model="tabS1">
+                <div ng-repeat="cardi in tabS1" style="margin-top: -50px;margin-left:{{$index*30}}px">
+                    <img class="" style="max-height: 110px" src="/assets/cards/machines/{{cardi.type}}.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center" style="">
+            <div class="apps-container" style="padding: 5px;padding-top:60px;border-style: dashed;min-height: 110px;border-color:#cccccc" ui-sortable="sortableOptions" ng-model="tabS2">
+                <div ng-repeat="cardi in tabS2" style="margin-top: -50px;margin-left:{{$index*30}}px">
+                    <img class="" style="max-height: 110px" src="/assets/cards/machines/{{cardi.type}}.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center" style="">
+            <div class="apps-container" style="padding: 5px;padding-top:60px;border-style: dashed;min-height: 110px;border-color:#cccccc" ui-sortable="sortableOptions" ng-model="tabS3">
+                <div ng-repeat="cardi in tabS3" style="margin-top: -50px;margin-left:{{$index*30}}px">
+                    <img class="" style="max-height: 110px" src="/assets/cards/machines/{{cardi.type}}.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center" style="">
+            <div class="apps-container" style="padding: 5px;padding-top:60px;border-style: dashed;min-height: 110px;border-color:#cccccc" ui-sortable="sortableOptions" ng-model="tabS4">
+                <div ng-repeat="cardi in tabS4" style="margin-top: -50px;margin-left:{{$index*30}}px">
+                    <img class="" style="max-height: 110px" src="/assets/cards/machines/{{cardi.type}}.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row apps-container" ui-sortable="sortableOptions" ng-model="tabS" style="border-style: dashed;min-height: 60px">-->
+    <!--<div style="display: inline-block;vertical-align: top;padding-left: 20px" ng-repeat="cardi in tabS">-->
+    <!--<img class="" style="max-height: 250px;-->
+    <!--display: inline-block;-->
+    <!--margin-top:{{($index+1)*100-(100)}}px;-->
+    <!--margin-right:-100px;-->
+    <!--" src="/assets/cards/machines/{{cardi.type}}.png">-->
+    <!--&lt;!&ndash;<img class="" style="max-height: 250px; display: inline-block; z-index: {{1000-($index+1)}};top:{{($index+1)*100}}px;left: {{($index+1)*60}}px;" src="/assets/cards/machines/{{cardi.type}}.png" ng-click="selection($index, cardi)">&ndash;&gt;-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="row" style="margin-top: 20px" ng-show="tabS1.length>0 || tabS2.length>0 || tabS3.length>0 || tabS4.length>0">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+            <button type="button" class="btn btn-default" ng-click="annuleSel()">Cancel these combinations</button>
+            <!--<button type="button" class="btn btn-primary" ng-click="valideSel()">Valider</button>-->
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="valideSel()">Confirm</button>
+</div>
