@@ -39,6 +39,7 @@ Remains to be done and request for help
 ##### Install 
 ```
 npm install 
+bower install
 ```
 
 ### Run
